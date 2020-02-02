@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74A2A5E923E7844F000C8147 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A2A5E823E7844F000C8147 /* CurrentWeather.swift */; };
 		972470AF20A27F0000050DF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972470AE20A27F0000050DF7 /* AppDelegate.swift */; };
 		972470B120A27F0000050DF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972470B020A27F0000050DF7 /* ViewController.swift */; };
 		972470B420A27F0000050DF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972470B220A27F0000050DF7 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74A2A5E823E7844F000C8147 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		972470AB20A27F0000050DF7 /* Stormy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stormy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		972470AE20A27F0000050DF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		972470B020A27F0000050DF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				972470AE20A27F0000050DF7 /* AppDelegate.swift */,
 				972470B020A27F0000050DF7 /* ViewController.swift */,
+				74A2A5E823E7844F000C8147 /* CurrentWeather.swift */,
 				972470B220A27F0000050DF7 /* Main.storyboard */,
 				972470B520A27F0100050DF7 /* Assets.xcassets */,
 				972470B720A27F0100050DF7 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				972470B120A27F0000050DF7 /* ViewController.swift in Sources */,
+				74A2A5E923E7844F000C8147 /* CurrentWeather.swift in Sources */,
 				972470AF20A27F0000050DF7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
