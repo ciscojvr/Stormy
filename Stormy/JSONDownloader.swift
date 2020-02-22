@@ -30,6 +30,22 @@ class JSONDownloader {
                 completion(nil, .requestFailed)
                 return
             }
+            
+            if httpResponse.statusCode == 200 {
+                // Because of the implicit conventions on the Objective-C side of things, the Error object could be empty even when the data is nil. So we first want to check that we have a valid data object.
+                if let data = data {
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON
+                        completion(json, nil)
+                    } catch {
+                        completion(nil, .jsonParsingFailure)
+                    }
+                } else {
+                    completion(nil, .invalidData)
+                }
+            } else {
+                completion(nil, .responseUnsuccessful(statusCode: httpResponse.statusCode))
+            }
         }
         return task
     }
