@@ -34,3 +34,29 @@ extension CurrentWeather {
         }
     }
 }
+
+extension CurrentWeather {
+    struct Key { // using a nested struct here so that we can avoid resorting to always typing out keys as string which is error-prone. If we use these keys in multiple places, they're defined in one place so rather than having to fix a bunch of different mistakes here and there, we can just fix one. We should remember to always try to avoid stringly typed code where possible.
+        static let temperature = "temperature"
+        static let humidity = "humidity"
+        static let precipitationProbability = "precipProbability"
+        static let summary = "summary"
+        static let icon = "icon"
+    }
+    
+    init?(json: [String: AnyObject]) { //failable initializer. Initializers written in an extension of a struct do not override the memberwise initializer, which is what we want here. Having the default init means if I want to test that my model is working as expected, particularly, when setting up the ViewModel, we can just insert some fake data rather than having to resort to making a separate network request where a bunch of other things can go wrong.
+        guard let tempValue = json[Key.temperature] as? Double, // since none of our store properties are optional, if any one of them fails, we return nil
+        let humidityValue = json[Key.humidity] as? Double, // using the same guard statement here because we want all of these to succeed.
+        let precipitationProbabilityValue = json[Key.precipitationProbability] as? Double,
+        let summaryString = json[Key.summary] as? String,
+        let iconString = json[Key.icon] as? String else {
+            return nil
+        }
+        
+        self.temperature = tempValue
+        self.humidity = humidityValue
+        self.precipProbability = precipitationProbabilityValue
+        self.summary = summaryString
+        self.icon = iconString
+    }
+}

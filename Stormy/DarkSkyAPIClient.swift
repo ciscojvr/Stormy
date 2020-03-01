@@ -19,7 +19,18 @@ class DarkSkyAPIClient {
     
     typealias CurrentWeatherCompletionHandler = (CurrentWeather?, DarkSkyError?) -> Void
     
+    // the below methods interacts with the API and returns either an error or a populated instance of current weather.
     func getCurrentWeather(at coordinate: Coordinate, completionHandler completion: @escaping CurrentWeatherCompletionHandler) {
      // since this method is going to be calling methods that are asynchronous closure based methods, we need to povide a completion handler for this method as well, so that we can provide some code to execute in the background whenever the work's complete. Since this closure is also executed after the body of this function is executed, we need to specify that this completion closure is escaping. We can't have both arguments (CurentWeather and DarkSkyError) containing non-nil values at any given point so we need to make them both optional.
+        guard let url = URL(string: coordinate.description, relativeTo: baseURL) else {
+            completion(nil, .invalidUrl)
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        
+        let task = downloader.jsonTask(with: request) { json, error in // completion handler written as a trailing closure 
+            
+        }
     }
 }
