@@ -15,7 +15,7 @@ struct Coordinate {
 
 extension Coordinate: CustomStringConvertible {
     var description: String {
-        return "\(latitude), \(longitude)"
+        return "\(latitude),\(longitude)"
     }
     
     static var alcatrazIsland: Coordinate { // static computed property 
