@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Weather {
+struct Weather { // wrapper type that encapsulates all of our data
     let currently: CurrentWeather
 }
 
