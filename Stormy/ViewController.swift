@@ -69,13 +69,11 @@ class ViewController: UIViewController {
     }
     
     func displayWeather(using viewModel: CurrentWeatherViewModel) {
-        DispatchQueue.main.async { // fix for error: "UILabel.text must be used from main thread only". See article, "Main Thread Checker"
-            self.currentTemperatureLabel.text = viewModel.temperature
-            self.currentHumidityLabel.text = viewModel.humidity
-            self.currentPrecipitationLabel.text = viewModel.precipitationProbability
-            self.currentSummaryLabel.text = viewModel.summary
-            self.currentWeatherIcon.image = viewModel.icon
-            }
+        self.currentTemperatureLabel.text = viewModel.temperature
+        self.currentHumidityLabel.text = viewModel.humidity
+        self.currentPrecipitationLabel.text = viewModel.precipitationProbability
+        self.currentSummaryLabel.text = viewModel.summary
+        self.currentWeatherIcon.image = viewModel.icon
     }
 }
 
