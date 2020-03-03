@@ -15,6 +15,16 @@ struct CurrentWeather: Codable {
     let precipProbability: Double
     let summary: String
     let icon: String
+    
+//    enum CurrentWeatherCodingKeys: String, CodingKey {
+//        // without an explicit type, the compiler infers that the JSON key that it needs to use to get the value for the stored property is the same as the name of stored property itself.
+//        // we don't need this custom type though because all its doing is generating the same raw values as the stored property names. So we can get rid of it because we know that it can infer the type automatically. The compiler can. We should get rid of the custom coding keys and let the compiler do all the work for us.
+//        case temperature = "temperature"
+//        case humidity = "humidity"
+//        case precipProbability = "precipProbability"
+//        case summary = "summary"
+//        case icon = "icon"
+//    }
 }
 
 extension CurrentWeather {
