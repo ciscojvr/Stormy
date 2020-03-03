@@ -8,16 +8,17 @@
 
 import Foundation
 
-struct Weather { // wrapper type that encapsulates all of our data
+struct Weather: Codable { // wrapper type that encapsulates all of our data
     let currently: CurrentWeather
 }
 
-extension Weather {
-    init?(json: [String: AnyObject]) {
-        guard let currentWeatherJson = json["currently"] as? [String:AnyObject], let currentWeather = CurrentWeather(json: currentWeatherJson) else {
-            return nil
-        }
-        
-        self.currently = currentWeather
-    }
-}
+// Below code no longer needed after conforming to Codable.
+//extension Weather {
+//    init?(json: [String: AnyObject]) {
+//        guard let currentWeatherJson = json["currently"] as? [String:AnyObject], let currentWeather = CurrentWeather(json: currentWeatherJson) else {
+//            return nil
+//        }
+//
+//        self.currently = currentWeather
+//    }
+//}
